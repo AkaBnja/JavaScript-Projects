@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="img/b.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div id="date"></div>
+            <h1>Hi, Benjamin Castillo</h1>
+            <br />
+            <p>Each task accomplished is one step closer to your goal...</p>
+            <br />
+        </div>
+        <div class="addTasksButton">
+            <input type="text" id="input" placeholder="Add a task..." />
+            <ion-icon name="add-circle-outline" id="enter" class="circle"></ion-icon>
+        </div>
+        <div class="tasksList">
+            <br />
+            <h2>Pending tasks...</h2>
+            <ul id="list">
+            <!--<li id="element">
+                    <i class="fa-regular fa-circle" data="done" id="${id}"></i>
+                    <p class="text ${LINE}">${task}</p>
+                    <i class="fa-solid fa-trash" data="remove" id="${id}"></i>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

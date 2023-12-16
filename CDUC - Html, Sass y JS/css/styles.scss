@@ -1,0 +1,166 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(#386c97, #152f44);
+    overflow: hidden;
+    perspective: 1800px;
+    text-align: center;
+    .cards {
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.6);
+        display: inline-block;
+        padding: 30px 35px;
+        perspective: 1800px;
+        text-align: left;
+        transform-style: preserve-3d;
+        transform: rotateX(11deg) rotateY(16.5deg);
+        min-width: 250px;
+        max-width: 655px;
+        display: flex;
+        flex-direction: column;
+        .containerCards {
+            display: flex;
+        }
+        h1 {
+            color: #152f44;
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            transform: translateZ(35px);
+        }
+        h3 {
+            color: #386c97;
+            font-size: 16px;
+            transform: translateZ(25px);
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            height: 250px;
+            width: 175px;
+            overflow: hidden;
+            perspective: 1200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(35px);
+            transition: transform 200ms ease-out;
+            text-align: center;
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+            .card__bg {
+                position: absolute;
+                bottom: -50px;
+                left: -50px;
+                right: -50px;
+                top: -50px;
+                transform-origin: 50% 50%;
+                transform: translateZ(-50px);
+                z-index: 0;
+                transition: all 0.3s;
+            }
+            .card__img {
+                position: relative;
+                height: 100%;
+            }
+            .card__text {
+                align-items: center;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                height: 70px;
+                justify-content: center;
+                position: absolute;
+                width: 100%;
+                z-index: 2;
+                .card__title {
+                    background-color: #1b4364;
+                    border-radius: 8px;
+                    color: #ffffff;
+                    font-size: 18px;
+                    font-weight: 700;
+                    padding: 0 10px;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+        .card__one {
+            .card__img {
+                right: 130px;
+                bottom: -25px;
+                height: 255px;
+            }
+            .card__bg {
+                background: url(../img/bgOne.jpg) center/cover no-repeat;
+            }
+        }
+        .card__two {
+            .card__img {
+                right: 70px;
+                bottom: -42px;
+                height: 230px;
+            }
+            .card__bg {
+                background: url(../img/bgTwo.jpg) center/cover no-repeat;
+            }
+        }
+        .card__three {
+            .card__img {
+                right: 140px;
+                bottom: -25px;
+                height: 250px;
+            }
+            .card__bg {
+                background: url(../img/bgThree.jpg) center/cover no-repeat;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        transform: scale(0.67);
+    }
+}
+
+@media screen and (max-width: 415px) {
+    body {
+        height: 110vh;
+        overflow-y: scroll; /* Añadido */
+    }
+    .cards {
+        margin-top: 90px;
+        width: 250px;
+        .containerCards {
+            flex-direction: column;
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+        h1 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 8px;
+        }
+    }
+}

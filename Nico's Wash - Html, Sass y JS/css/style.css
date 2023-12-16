@@ -1,0 +1,793 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body { /* Aqui un ejemplo perfecto de como colocar un fondo simple y rapido a una pagina */
+  height: 100vh;
+  background-color: #ffffff; /* #be3c3c */
+  background-size: cover;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+a:hover {
+  color: #cccccc;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  padding: 0 2rem;
+  width: 100%;
+  z-index: 1000;
+  /* DROPDOWN MENU */
+}
+header .navBar {
+  width: 80%;
+  height: 80px;
+  margin: 10px auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+header .navBar .logo {
+  font-size: 30px;
+}
+header .navBar .links {
+  display: flex;
+  gap: 2rem;
+}
+header .navBar .toggleBtn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+header .actionBtn {
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #1dac51;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+header .actionBtn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+header .actionBtn:active {
+  scale: 0.95;
+}
+header .dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 70px;
+  height: 0;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+header .dropdownMenu ul li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .dropdownMenu .actionBtn {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+header .dropdownMenu.open {
+  height: 250px;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  /* Section: HERO */
+}
+main #hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #hero img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+main #hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 900px;
+  z-index: 10;
+  background: linear-gradient(to top, #000000, transparent);
+}
+main #hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  z-index: 10;
+  background: linear-gradient(to bottom, #000000, transparent);
+}
+main #hero .content {
+  position: absolute;
+  z-index: 100;
+  max-width: 900px;
+  text-align: center;
+}
+main #hero .content h2 {
+  color: white;
+  font-size: 3.5em;
+}
+main #hero .content h1 {
+  margin-top: -40px;
+  color: white;
+  font-size: 5.5em;
+}
+main #hero .content p {
+  color: white;
+  font-size: 1.2em;
+}
+main #hero .content .btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+main #hero .content .btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+main #backgroundBlacksSpecial {
+  display: none;
+  height: 130px;
+  width: 100%;
+  background-color: #000000;
+}
+main #backgroundBlackFinal {
+  display: none;
+  height: 130px;
+  width: 100%;
+  background-color: #000000;
+}
+main #servicesWash {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+}
+main #servicesWash h2 {
+  color: white;
+  font-size: 3.5em;
+}
+main #servicesWash .paragraphOne {
+  color: white;
+  font-size: 1.2em;
+  padding: 0 80px;
+}
+main #servicesWash h3 {
+  margin-top: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+main #servicesWash .paragraphTwo {
+  margin-top: 15px;
+  color: white;
+  font-size: 3em;
+}
+main #servicesWash .contentServices {
+  height: auto;
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px;
+}
+main #servicesWash .contentServices img {
+  max-width: 250px;
+}
+main #servicesWash .contentServices .serviceOne {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesWash .contentServices .serviceOne:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesWash .contentServices .serviceTwo {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesWash .contentServices .serviceTwo:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesWash .contentServices .serviceThree {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesWash .contentServices .serviceThree:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesWash .btn {
+  max-width: 250px;
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+main #servicesWash .btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+main #servicesTapestry {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+}
+main #servicesTapestry h2 {
+  margin-top: 50px;
+  color: white;
+  font-size: 3.5em;
+}
+main #servicesTapestry .paragraphOne {
+  color: white;
+  font-size: 1.2em;
+  padding: 0 80px;
+  margin-top: 50px;
+}
+main #servicesTapestry h3 {
+  color: white;
+  font-size: 1.2em;
+}
+main #servicesTapestry h4 {
+  margin-top: 10px;
+  color: white;
+  font-size: 1em;
+}
+main #servicesTapestry .paragraphTwo {
+  color: white;
+  font-size: 1.2em;
+}
+main #servicesTapestry .paragraphThree {
+  color: white;
+  font-size: 0.8em;
+}
+main #servicesTapestry .space {
+  height: 25px;
+  width: 100%;
+}
+main #servicesTapestry .spaceTwo {
+  height: 8px;
+  width: 100%;
+}
+main #servicesTapestry .contentServices {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  margin-top: 30px;
+}
+main #servicesTapestry .contentServices img {
+  max-width: 250px;
+}
+main #servicesTapestry .contentServices .serviceOne {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesTapestry .contentServices .serviceOne:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesTapestry .contentServices .serviceTwo {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesTapestry .contentServices .serviceTwo:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesTapestry .btn {
+  max-width: 250px;
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+main #servicesTapestry .btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+main #servicesCouch {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+}
+main #servicesCouch h2 {
+  margin-top: 50px;
+  color: white;
+  font-size: 3.5em;
+}
+main #servicesCouch .paragraphOne {
+  color: white;
+  font-size: 1.2em;
+  padding: 0 80px;
+  margin-top: 50px;
+}
+main #servicesCouch h3 {
+  color: white;
+  font-size: 1.2em;
+}
+main #servicesCouch h4 {
+  margin-top: 10px;
+  color: white;
+  font-size: 1em;
+}
+main #servicesCouch .paragraphTwo {
+  color: white;
+  font-size: 1.2em;
+}
+main #servicesCouch .paragraphThree {
+  color: white;
+  font-size: 0.8em;
+}
+main #servicesCouch .space {
+  height: 25px;
+  width: 100%;
+}
+main #servicesCouch .spaceTwo {
+  height: 8px;
+  width: 100%;
+}
+main #servicesCouch .contentServices {
+  height: auto;
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px;
+}
+main #servicesCouch .contentServices .serviceOne {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesCouch .contentServices .serviceOne:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesCouch .contentServices .serviceOne img {
+  max-width: 220px;
+}
+main #servicesCouch .contentServices .serviceTwo {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesCouch .contentServices .serviceTwo:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesCouch .contentServices .serviceTwo img {
+  max-width: 190px;
+}
+main #servicesCouch .contentServices .serviceThree {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesCouch .contentServices .serviceThree:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesCouch .contentServices .serviceThree img {
+  max-width: 250px;
+}
+main #servicesCouch .contentServices .serviceFour {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesCouch .contentServices .serviceFour:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesCouch .contentServices .serviceFour img {
+  max-width: 250px;
+}
+main #servicesCouch .contentServices .serviceFive {
+  height: 350px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(70, 70, 70, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  transition: 0.5s;
+}
+main #servicesCouch .contentServices .serviceFive:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+main #servicesCouch .contentServices .serviceFive img {
+  max-width: 250px;
+}
+main #servicesCouch .btn {
+  max-width: 250px;
+  position: relative;
+  display: inline-block;
+  margin: 30px 0;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+main #servicesCouch .btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+main #swiperSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+main #swiperSection h2 {
+  margin-top: -100px;
+  color: white;
+  font-size: 3.5em;
+}
+main #swiperSection .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+main #swiperSection .swiper .swiper-wrapper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 30px;
+  color: black;
+}
+main #swiperSection .swiper .swiper-wrapper .swiper-slide .picture {
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+}
+main #swiperSection .swiper .swiper-wrapper .swiper-slide .picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+main #swiperSection .swiper .swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+  border-radius: 30px;
+  transition: all 0.3s;
+  background: rgb(70, 70, 70);
+}
+main #swiperSection .swiper .swiper-pagination-bullet-active {
+  background: rgb(70, 70, 70);
+  width: 30px;
+  height: 12px;
+}
+main #contactSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90vh;
+  padding: 20px 30px;
+  background-color: #000000;
+}
+main #contactSection h2 {
+  color: white;
+  font-size: 3.5em;
+}
+main #contactSection .contactBox {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 30px;
+}
+main #contactSection .contactBox .left {
+  height: 100%;
+  background: url("/img/car.jpg") no-repeat center;
+  background-size: cover;
+}
+main #contactSection .contactBox .right {
+  padding: 25px 40px;
+}
+main #contactSection .contactBox .right .titleContact {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+main #contactSection .contactBox .right .titleContact::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+}
+main #contactSection .contactBox .right .field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  background-color: rgb(230, 230, 230);
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3s;
+}
+main #contactSection .contactBox .right .field.area {
+  min-height: 150px;
+}
+main #contactSection .contactBox .right .field:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+main #contactSection .contactBox .right .field:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+main #contactSection .contactBox .right .btn {
+  width: 60%;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: rgb(75, 75, 75);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+main #contactSection .contactBox .right .btn:hover {
+  background-color: rgb(120, 120, 120);
+}
+main #footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(3, 3, 3);
+}
+main #footer .copyright {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+}
+main #footer .copyright a {
+  color: white;
+  text-decoration: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1600px) {
+  header .navBar {
+    max-width: 260px;
+    min-width: 230px;
+    height: 120px;
+  }
+  header .navBar .links {
+    display: none;
+  }
+  header .navBar .toggleBtn {
+    display: block;
+  }
+  header .actionBtn {
+    display: none;
+  }
+  header .dropdownMenu {
+    margin-top: 75px;
+    display: block;
+    left: 2rem;
+    width: unset;
+  }
+  main #backgroundBlacksSpecial {
+    display: block;
+  }
+  main #servicesWash .contentServices {
+    flex-direction: row;
+  }
+  main #servicesCouch .contentServices {
+    flex-direction: row;
+  }
+  main #servicesCouch {
+    height: auto;
+  }
+  main #contactSection .contactBox {
+    grid-template-columns: 1fr;
+  }
+  main #contactSection .contactBox .left {
+    height: 200px;
+  }
+}
+@media (max-width: 576px) {
+  header .dropdownMenu {
+    left: 2rem;
+    width: unset;
+    min-width: 230px;
+  }
+  main #servicesWash {
+    height: auto;
+  }
+  main #servicesWash .contentServices {
+    flex-direction: column;
+  }
+  main #servicesTapestry {
+    height: auto;
+  }
+  main #servicesTapestry .contentServices {
+    flex-direction: column;
+  }
+  main #contactSection {
+    height: 120vh;
+  }
+  main #contactSection h2 {
+    font-size: 3em;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #181818;
+  height: 120px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222222;
+}/*# sourceMappingURL=style.css.map */

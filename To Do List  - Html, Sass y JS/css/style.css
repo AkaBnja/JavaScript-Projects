@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fafafb;
+  --black: #000000;
+  --grey: #acacac;
+  --greenLight: #44a383;
+  --greenMid: #2c8a6b;
+  --greenDark: #226d44;
+}
+
+body {
+  background: linear-gradient(to bottom, var(--greenMid), var(--black));
+  height: calc(100vh - 30px);
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Container general */
+.container {
+  max-width: 80%;
+  width: 450px;
+  margin: 30px auto auto auto;
+  padding: 10px 10px;
+  background-color: rgba(248, 248, 248, 0.2);
+  border: 3px solid rgba(248, 248, 248, 0.1);
+  border-radius: 30px;
+}
+
+/* Perfil */
+.profile h1 {
+  color: var(--white);
+}
+.profile p {
+  color: var(--white);
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+.profile #date {
+  color: var(--white);
+  padding: 20px 0 10px 0;
+  font-weight: 600;
+}
+
+/* Agregar tarea */
+.addTasksButton {
+  height: 50px;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  gap: 10px;
+}
+.addTasksButton input {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--white);
+  outline: none; /* Se eliminan las lineas interiores que aparecen por defecto en los input */
+}
+.addTasksButton input::-moz-placeholder {
+  font-size: 1rem;
+  color: var(--greenMid);
+}
+.addTasksButton input::placeholder {
+  font-size: 1rem;
+  color: var(--greenMid);
+}
+.addTasksButton ion-icon {
+  font-size: 50px;
+  color: var(--greenMid);
+}
+.addTasksButton ion-icon:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Lista de tareas */
+.tasksList h2 {
+  color: var(--white);
+  margin-bottom: 15px;
+}
+.tasksList ul li {
+  display: flex;
+  background: linear-gradient(to bottom, var(--greenLight), var(--greenDark));
+  border-radius: 15px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  margin: 5px 0;
+}
+.tasksList ul li i {
+  font-size: 25px;
+}
+.tasksList ul li i:hover {
+  color: var(--grey);
+  cursor: pointer;
+}
+.tasksList ul li p {
+  font-size: 1.2rem;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: var(--grey);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  /* Aqui un ejemplo perfecto de como colocar un fondo simple y rapido a una pagina */
+  height: 100vh;
+  background-color: #000000;
+  background-image: url("https://i.pinimg.com/originals/0a/4d/cb/0a4dcb92fa2d3c601b58d72720d6bec4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+a:hover {
+  color: #cccccc;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navBar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navBar .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.navBar .links {
+  display: flex;
+  gap: 2rem;
+}
+.navBar .toggleBtn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.actionBtn {
+  background-color: #5b0799;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+.actionBtn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+.actionBtn:active {
+  scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdownMenu ul li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdownMenu .actionBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dropdownMenu.open {
+  height: 220px;
+}
+
+/* Section: HERO */
+main section#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+  color: #fff;
+}
+main section#hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .navBar .links,
+  .navBar .actionBtn {
+    display: none;
+  }
+  .navBar .toggleBtn {
+    display: block;
+  }
+  .dropdownMenu {
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .dropdownMenu {
+    left: 2rem;
+    width: unset;
+  }
+}/*# sourceMappingURL=style.css.map */

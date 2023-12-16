@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #222;
+}
+
+.menuNavigation {
+    position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    background: #ffffff;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    .menuToggle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 60px;
+        width: 100%;
+        border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 23px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #333;
+            transform: translateY(-8px);
+            transition: 0.5s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #333;
+            transform: translateY(8px);
+            transition: 0.5s;
+            box-shadow: 0 -8px 0 #333;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        li {
+            position: relative;
+            list-style: none;
+            width: 100%;
+            height: 60px;
+            padding: 0 10px;
+            transition: 0.5s;
+            &.active {
+                transform: translateX(30px);
+                a {
+                    .material-symbols-outlined {
+                        color: #ffffff;
+                        background: var(--clr);
+                        &::before {
+                            opacity: 0.5;
+                        }
+                    }
+                    .text {
+                        color: var(--clr);
+                    }
+                }
+            }
+            a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                text-decoration: none;
+                .material-symbols-outlined {
+                    position: relative;
+                    display: block;
+                    min-width: 55px;
+                    height: 55px;
+                    line-height: 60px;
+                    transition: 0.5s;
+                    border-radius: 10px;
+                    font-size: 1.75rem;
+                    color: #222;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--clr);
+                        filter: blur(8px);
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+                }
+                .text {
+                    position: relative;
+                    padding: 0 15px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    color: #333;
+                    font-weight: 800;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+    &.open {
+        width: 250px;
+        .menuToggle {
+            &::before {
+                transform: translateY(0px) rotate(45deg);
+            }
+            &::after {
+                transform: translateY(0px) rotate(-45deg);
+                box-shadow: none;
+            }
+        }
+        ul {
+            li {
+                &.active {
+                    transform: translateX(10px);
+                }
+                a {
+                    .text {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}

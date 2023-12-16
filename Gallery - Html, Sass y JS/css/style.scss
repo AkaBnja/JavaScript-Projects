@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    #hola {
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            .swiper-wrapper {
+                .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                    width: 320px;
+                    background-color: white;
+                    overflow: hidden;
+                    border-radius: 30px;
+                    color: black;
+                    .picture {
+                        width: 320px;
+                        height: 320px;
+                        overflow: hidden;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            .swiper-pagination {
+                &-bullet{
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 30px;
+                    transition: all 0.3s;
+                }
+                &-bullet-active{
+                    background: #eee;
+                    width: 30px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+}

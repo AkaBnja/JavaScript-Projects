@@ -1,0 +1,518 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Aqui un ejemplo perfecto de como colocar un fondo simple y rapido a una pagina */
+  height: 100vh;
+  background-color: #ffffff; /* #be3c3c */
+  background-size: cover;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  &:hover {
+    color: #949494;
+  }
+}
+
+.divWsp {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  .wspLogo {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  .navBar {
+    max-width: 1200px;
+    height: 90px;
+    margin-top: 10px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    .logo {
+      color: #fff;
+      font-size: 30px;
+      text-align: center;
+      margin-left: -30px;
+    }
+    .logoImg {
+      width: 80px;
+      height: 80px;
+    }
+    .links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .toggleBtn {
+      margin-left: 20px;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+  }
+  .actionBtn {
+    background-color: #25d366;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: 1px solid #1dac51;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 220px;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    &:hover {
+      scale: 1.05;
+      color: #fff;
+    }
+    &:active {
+      scale: 0.95;
+    }
+  }
+  /* DROPDOWN MENU */
+  .dropdownMenu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 70px;
+    height: 0;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    ul {
+      li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .actionBtn {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+    &.open {
+      height: 350px;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  position: relative;
+  /* Section: HERO */
+  #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100vh;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      z-index: 10;
+      background: linear-gradient(to top, #03a0f5, transparent);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      z-index: 10;
+      background: linear-gradient(to bottom, #0280c4, transparent);
+    }
+    .content {
+      position: absolute;
+      z-index: 100;
+      max-width: 900px;
+      text-align: center;
+      h1 {
+        color: #ffffff;
+        font-size: 4.5em;
+      }
+      p {
+        color: white;
+        font-size: 2em;
+      }
+      .btn {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+        background: white;
+        color: #333;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        transition: 0.5s;
+        &:hover {
+          background: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+  #detergentes,
+  #baño,
+  #cocina,
+  #hogar,
+  #papeles,
+  #automovil {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #03a0f5; //050505
+    padding-bottom: 40px;
+    padding-top: 130px; /* Ajusta según la altura de tu navbar */
+    h2 {
+      color: white;
+      font-size: 4em;
+      z-index: 100;
+    }
+    .subTitle {
+      color: white;
+      font-size: 2em;
+      padding: 0 80px;
+      z-index: 100;
+    }
+    .services {
+      height: auto;
+      width: 100%;
+      background-color: #03a0f5;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-flow: wrap;
+      gap: 30px;
+      margin-top: 30px;
+      padding: 20px 200px 20px 200px;
+      h3 {
+        margin-top: 10px;
+        color: white;
+        font-size: 1.2em;
+      }
+      .product {
+        min-width: 320px; /* Establece un ancho fijo para las cartas */
+        max-width: 320px;
+        min-height: 430px;
+        max-height: 430px;
+        background: rgba(0, 0, 0, 0.7);
+        transition: 0.5s;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h3 {
+          color: #ffffff;
+          font-size: 1.5em;
+          text-align: center;
+          margin: 0;
+        }
+        img {
+          max-width: 250px;
+          height: 200px;
+          margin-top: 10px;
+          padding: 20px;
+        }
+        .description {
+          font-size: 1em;
+          margin-top: 10px;
+          overflow: hidden;
+        }
+        .paragraphTwo {
+          color: #ffffff;
+          font-size: 1.6em;
+          font-weight: bold;
+          top: 0;
+          margin-top: 10px;
+        }
+        &:hover {
+          background: rgba(6, 58, 94, 0.7);
+        }
+      }
+    }
+  }
+  #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #005e91;
+    .copyright {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      a {
+        color: #03a0f5;
+        font-size: 20px;
+        &:hover {
+          color: #cfcfcf;
+        }
+      }
+    }
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1600px) {
+  header {
+    width: 100%;
+    .navBar {
+      max-width: 360px;
+      min-width: 360px;
+      height: 120px;
+      gap: 0;
+      .links {
+        display: none;
+      }
+      .logo {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        margin-left: -30px;
+      }
+      .logoImg {
+        margin-left: -10px;
+      }
+      .toggleBtn {
+        display: block;
+        margin-left: -10px;
+      }
+    }
+    .actionBtn {
+      display: none;
+    }
+    .dropdownMenu {
+      margin-top: 75px;
+      display: block;
+      left: 2rem;
+      width: unset;
+    }
+  }
+}
+
+@media (max-width: 1115px) {
+  main {
+    #detergentes,
+    #baño,
+    #cocina,
+    #hogar,
+    #papeles,
+    #automovil {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #03a0f5; //050505
+      padding-bottom: 40px;
+      padding-top: 0px; /* Ajusta según la altura de tu navbar */
+      h2 {
+        color: white;
+        font-size: 4em;
+        z-index: 100;
+      }
+      .subTitle {
+        color: white;
+        font-size: 2em;
+        padding: 0 80px;
+        z-index: 100;
+      }
+      .services {
+        padding: 0px;
+        .product {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  main {
+    #hero {
+      .content {
+        font-size: 90%;
+      }
+    }
+    #detergentes,
+    #baño,
+    #cocina,
+    #hogar,
+    #papeles,
+    #automovil {
+      h2 {
+        font-size: 3em;
+      }
+      .subTitle {
+        font-size: 1.8em;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  main {
+    #hero {
+      .content {
+        font-size: 80%;
+      }
+    }
+    #footer {
+      .copyright {
+        padding: 0px 20px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 650px) {
+  main {
+    #hero {
+      .content {
+        font-size: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    #hero {
+      .content {
+        font-size: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  header {
+    .navBar {
+      transform: scale(0.8);
+    }
+  }
+  main {
+    #hero {
+      .content {
+        font-size: 50%;
+      }
+    }
+    #detergentes,
+    #baño,
+    #cocina,
+    #hogar,
+    #papeles,
+    #automovil {
+      h2 {
+        font-size: 2.5em;
+      }
+      .subTitle {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    #hero {
+      .content {
+        font-size: 40%;
+      }
+    }
+    #detergentes,
+    #baño,
+    #cocina,
+    #hogar,
+    #papeles,
+    #automovil {
+      h2 {
+        font-size: 2.2em;
+      }
+      .subTitle {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+/* BAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-thumb {
+  background: #b1b1b1;
+  height: 120px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #969696;
+}

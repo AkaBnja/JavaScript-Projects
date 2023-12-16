@@ -1,0 +1,126 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #222222;
+}
+
+.card {
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #12ebb1, #1e7388);
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.card .search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: #ffffff;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
+  transition: background 1s ease;
+}
+.card .search input:hover {
+  background: #e0f0ed;
+}
+.card .search button {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+.card .search button:hover {
+  background: #e0f0ed;
+}
+.card .search button img {
+  margin-top: 5px;
+  margin-right: 2px;
+  width: 20px;
+}
+.card .weather {
+  display: none;
+}
+.card .weather .weatherIcon {
+  width: 200px;
+  margin-top: 30px;
+  animation: floatAnimation 2s ease infinite alternate;
+}
+.card .weather h1 {
+  margin-top: -30px;
+  font-size: 80px;
+  font-weight: 500;
+}
+.card .weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -20px;
+}
+.card .weather .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 30px;
+}
+.card .weather .details .col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.card .weather .details .col img {
+  width: 40px;
+  margin-right: 10px;
+}
+.card .weather .details .col p {
+  font-size: 20px;
+  margin-top: -6px;
+}
+.card .error {
+  display: none;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+@media (max-width: 460px) {
+  .details {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}/*# sourceMappingURL=styles.css.map */
